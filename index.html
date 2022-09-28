@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jogo da Forca</title>
+        <link rel="stylesheet" href="style.css" />
+        <link href="https: //fonts.googleapis.com/css2? family= Inter & display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/b5718073e0.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <header>
+            <img src="alura.png" alt="Logo da Alura" class="logo" />
+            <div class="caixa-titulo">
+                <h1 class="titulo">Jogo da Forca</h1>
+            </div>
+            <div class="contato">
+                <a href="https://www.linkedin.com/in/paloma-bonatte-de-almeida"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                <a href="https://github.com/Palomabonattedealmeida"><i class="fa-brands fa-square-github fa-2x"></i></a>
+            </div>
+        </header>
+
+        <main>
+            <section class="inicio">
+                <button class="botao-jogar">Começar a jogar</button>
+                <button class="botao-adicionar-palavra">Adicionar nova palavra</button>
+            </section>
+
+            <section class="nova-palavra">
+                <textarea rows="5" cols="30" class="palavra-frase" placeholder="Digite uma palavra ou frase"></textarea>
+                <p class="aviso"><i class="fa-solid fa-circle-exclamation"></i> Apenas letras sem acento e sem caractéres especiais!</p>
+                <button class="botao-salvar-comecar">Salvar e começar</button>
+                <button class="botao-cancelar">Cancelar</button>
+            </section>
+
+            <section class="jogo">
+
+                <div class="canvas">
+                    <canvas width="350" height="410" class="canvas-forca"></canvas>
+                </div>
+                <div class="caixa-palavra"></div>
+                <div class="caixa-letra-errada"></div>
+                <div class="teclado"></div>
+                <div class="container-botoes">
+                    <button class="botao-novo-jogo">Novo jogo</button>
+                    <button class="botao-desistir">Desistir</button>
+                </div>
+
+                <div class="venceu">
+                    <div class="conteudo-venceu">
+                        <p>Você venceu! Parabéns!!</p>
+                        <button class="botao-voltar">Voltar ao início</button>
+                    </div>
+                </div>
+
+                <div class="perdeu">
+                    <div class="conteudo-perdeu">
+                        <p>Fim de Jogo! Não desista, tente novamente!!!</p>
+                        <p class="paragrafo-fim"></p>
+                        <button class="botao-voltar" id="voltar">Voltar ao início</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Desenvolvido por Paloma Bonatte de Almeida &copy 2022</p>
+            <p>Challenge Programa ONE e Alura</p>
+        </footer>
+        <script type="text/javascript" src="forca.Js"></script>
+    </body>
+</html>

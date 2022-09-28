@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+
+
+:root {
+    font-size: 14px;
+    --cor1: #000000;
+    --cor2: #FFA500;
+}
+
+*{
+    font-family: 'Inter';
+    font-weight: 400;
+    margin: 0;
+}
+
+body {
+    background: var(--cor2);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 2rem;
+}
+
+.caixa-titulo {
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    width: 100%;
+}
+
+.titulo {
+    width: fit-content;
+    margin: 1rem auto;
+    font-weight: 400;
+}
+
+.contato {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contato a {
+    color: rgb(41, 40, 43);
+}
+
+.contato a:hover {
+    color: rgb(128, 15, 0);
+}
+
+main {
+    margin: 8rem 0;
+}
+
+.inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30vh 0;
+    gap: 3rem;
+}
+
+.jogo,
+.nova-palavra {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.palavra-frase {
+    resize: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+    width: 80%;
+    height: 30vh;
+    border-radius: 20px;
+    border: 2px dashed var(--cor1);
+}
+
+.palavra-frase::placeholder {
+    color: var(--cor1);
+}
+
+.aviso {
+    width: 100%;
+    margin: 0 10vw;
+}
+
+.canvas {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.caixa-palavra {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.espaco-letra {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    border-bottom: 4px solid #000000;
+}
+
+.caixa-letra-errada {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    font-size: 25px;
+    color: #444141;
+}
+
+.teclado {
+    display: grid;
+    place-items: center;
+    gap: 0.5rem
+}
+
+.botoes-teclado {
+    width: 28px;
+    padding: 5px;
+    margin: 0 3px;
+    font-size: 20px;
+    font-weight: 600;
+    border: 1px solid var(--cor1);
+    border-radius: 10px;
+}
+
+.botoes-teclado:hover {
+    cursor: pointer;
+}
+
+.container-botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    align-items: center;
+}
+
+.venceu,
+.perdeu {
+    position: fixed;
+    text-align: center;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.conteudo-venceu,
+.conteudo-perdeu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    gap: 2rem;
+    position: absolute;
+    border-radius: 30px;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    background: #eee4f1;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.conteudo-venceu {
+    color: rgb(7, 7, 7);
+}
+
+.conteudo-perdeu {
+    color: rgb(189, 3, 3);
+}
+
+.nova-palavra,
+.jogo {
+    display: none;
+}
+
+/*CSS dos botões de todas sections (exceto teclado)*/
+.botao-jogar,
+.botao-salvar-comecar,
+.botao-novo-jogo {
+    width: 14rem;
+    height: 4.5rem;
+    font-size: 1.3rem;
+    padding: 5px;
+    border-radius: 30px;
+    color: var(--cor2);
+    font-weight: bold;
+    background: var(--cor1);
+    border: 2px solid var(--cor1);
+    transition: 0.5s;
+}
+
+.botao-jogar:hover,
+.botao-salvar-comecar:hover,
+.botao-novo-jogo:hover {
+    color: var(--cor1);
+    background: var(--cor2);
+    cursor: pointer;
+}
+
+.botao-adicionar-palavra,
+.botao-cancelar,
+.botao-desistir,
+.botao-voltar {
+    width: 14rem;
+    height: 4.5rem;
+    font-size: 1.3rem;
+    padding: 5px;
+    border-radius: 25px;
+    color: var(--cor1);
+    font-weight: bold;
+    background: var(--cor2);
+    border: 2px solid var(--cor1);
+    transition: 0.5s;
+}
+
+.botao-adicionar-palavra:hover,
+.botao-cancelar:hover,
+.botao-desistir:hover,
+.botao-voltar:hover {
+    color: var(--cor2);
+    background: var(--cor1);
+    cursor: pointer;
+}
+
+footer {
+    margin: 40px 10px;
+}
+
+footer p {
+    color: rgba(0, 0, 0, 0.925);
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 450px) {
+    .botoes-teclado {
+        width: 40px;
+        margin: 0 5px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .botoes-teclado {
+        width: 55px;
+        height: 50px;
+        margin: 0 7px;
+    }
+
+    .container-botoes {
+        flex-direction: row;
+        justify-content: center
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .botoes-teclado {
+        width: 80px;
+        margin: 0 10px;
+    }
+}
+
+Rodapé © 2022 GitHub,
+Inc. Navegação no rodapé Termos Privacidade Segurança Status Documentos Entre em contato com o GitHub Preços API Treinamento Blog Sobre
